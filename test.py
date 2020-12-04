@@ -23,7 +23,6 @@ def check(example, root_vertex, result):
 
 
 def test():
-    fail = False
     example_graph_medium = {
     'A': {'B': 5, 'C': 1},
     'B': {'A': 5, 'C': 4, 'D': 2, 'E': 3},
@@ -62,17 +61,41 @@ def test():
     }
     example_only_root_result = {}
 
+    print('Starting fibheap tests')
+    print('Starting Tiny Graph Test Suite')
+    print('Testing a Single Vertex')
+    check_fib(example_only_root, 'A', example_only_root_result)
+
+    print('Starting Small Test Suite')
+    print('Testing Small Start at node A')
+    check_fib(example_graph_small, 'A', example_graph_small_result_a)
+    print('Testing Small Start at node B')
+    check_fib(example_graph_small, 'B', example_graph_small_result_b)
+
+    print('Starting Medium Test Suite')
+    print('Testing Medium Starting at node A')
+    check_fib(example_graph_medium, 'A', example_graph_medium_result_a)
+    print('Testing Medium Starting at node B')
+    check_fib(example_graph_medium, 'B', example_graph_medium_result_b)
+
+    print('Tests Completed')
+
+
+
+
+
+    print('Starting heapq tests')
     print('Starting Tiny Graph Test Suite')
     print('Testing a Single Vertex')
     check(example_only_root, 'A', example_only_root_result)
 
-    print("Starting Small Test Suite")
+    print('Starting Small Test Suite')
     print('Testing Small Start at node A')
     check(example_graph_small, 'A', example_graph_small_result_a)
     print('Testing Small Start at node B')
     check(example_graph_small, 'B', example_graph_small_result_b)
 
-    print("Starting Medium Test Suite")
+    print('Starting Medium Test Suite')
     print('Testing Medium Starting at node A')
     check(example_graph_medium, 'A', example_graph_medium_result_a)
     print('Testing Medium Starting at node B')
