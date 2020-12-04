@@ -6,6 +6,14 @@
 import prims
 
 
+def check(example, root_vertex, result):
+    if prims.prims(example, root_vertex) != result:
+        print(f"Failed!")
+        print(f"Expected = {result}\nBut got:\nResult   = {prims.prims(example, root_vertex)}\n")
+    else:
+        print("OK!")
+
+
 def test():
     fail = False
     example_graph_medium = {
@@ -17,14 +25,14 @@ def test():
     'F': {'C': 1, 'E': 2},
     'G': {'D': 2, 'F': 1},
     }
-    example_graph_medium_result_A = {
+    example_graph_medium_result_a = {
         'A': ['C'],
         'C': ['F'],
         'F': ['E'],
         'E': ['D'],
         'D': ['B', 'G'],
     }
-    example_graph_medium_result_B = {
+    example_graph_medium_result_b = {
         'B': ['D'],
         'D': ['E', 'G'],
         'G': ['F'],
@@ -35,10 +43,10 @@ def test():
         'A': {'B': 2},
         'B': {'A': 2},
     }
-    example_graph_small_result_A = {
+    example_graph_small_result_a = {
         'A': ['B']
     }
-    example_graph_small_result_B = {
+    example_graph_small_result_b = {
         'B': ['A']
     }
     example_only_root = {
@@ -48,36 +56,21 @@ def test():
 
     print('Starting Tiny Graph Test Suite')
     print('Testing a Single Vertex')
-    print(f"Expected = {example_only_root_result}\nResult   = {prims.prims(example_only_root, 'A')}\n")
-    if prims.prims(example_only_root, 'A') != example_only_root_result:
-        print("failed")
-        fail = True
+    check(example_only_root, 'A', example_only_root_result)
+
     print("Starting Small Test Suite")
     print('Testing Small Start at node A')
-    print(f"Expected = {example_graph_small_result_A}\nResult   = {prims.prims(example_graph_small, 'A')}")
-    if prims.prims(example_graph_small, 'A') != example_graph_small_result_A:
-        print("failed")
-        fail = True
+    check(example_graph_small, 'A', example_graph_small_result_a)
     print('Testing Small Start at node B')
-    print(f"Expected = {example_graph_small_result_B}\nResult   = {prims.prims(example_graph_small, 'B')}\n")
-    if prims.prims(example_graph_small, 'B') != example_graph_small_result_B:
-        print("failed")
-        fail = True
+    check(example_graph_small, 'B', example_graph_small_result_b)
+
     print("Starting Medium Test Suite")
     print('Testing Medium Starting at node A')
-    print(f"Expected = {example_graph_medium_result_A}\nResult   = {prims.prims(example_graph_medium, 'A')}")
-    if prims.prims(example_graph_medium, 'A') != example_graph_medium_result_A:
-        print("failed")
-        fail = True
+    check(example_graph_medium, 'A', example_graph_medium_result_a)
     print('Testing Medium Starting at node B')
-    print(f"Expected = {example_graph_medium_result_B}\nResult   = {prims.prims(example_graph_medium, 'B')}\n")
-    if prims.prims(example_graph_medium, 'B') != example_graph_medium_result_B:
-        print("failed")
-        fail = True
-    if fail:
-        print('Tests Completed With Failure')
-    else:
-        print('Test Completed and Passing All!')
+    check(example_graph_medium, 'B', example_graph_medium_result_b)
+
+    print('Tests Completed')
 
 
 if __name__ == "__main__":
