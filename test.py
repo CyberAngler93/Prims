@@ -1,6 +1,6 @@
 # Test suite for my implementation of Prims Minimum Spanning Tree
 # Created by Matt Perry on 12/02/20
-# Last Modified 12/02/20
+# Last Modified 12/04/20
 # For CS411 HW7
 # Prof. Hartman Fall 2020
 import prims
