@@ -7,23 +7,23 @@ import heapq
 from collections import defaultdict
 
 
-def prims(graph, root) -> dict:
-    min_span_tree = defaultdict(set)
-    is_visited = {root}
-    # generate edges that leave the root node
-    edges = [
-        (cost, root, next_node)
-        for next_node, cost in graph[root].items()
-    ]
+def prims(graph, root_vertex) -> dict:
+    min_span_tree = defaultdict(list)
+    is_visited = {root_vertex}
+    # generate list of tuples that contain cost, root, next_vertex
+    edges = []
+    for next_vertex, cost in graph[root_vertex].items():
+        edges.append((cost, root_vertex, next_vertex))
+
     # Put root edges into priority queue
     heapq.heapify(edges)
     while edges:
-        cost, current_node, next_node = heapq.heappop(edges)
-        if next_node not in is_visited:
-            is_visited.add(next_node)
-            min_span_tree[current_node].add(next_node)
-            for to_next_node, cost, in graph[next_node].items():
+        cost, current_vertex, next_vertex = heapq.heappop(edges)
+        if next_vertex not in is_visited:
+            is_visited.add(next_vertex)
+            min_span_tree[current_vertex].append(next_vertex)
+            for to_next_node, cost, in graph[next_vertex].items():
                 if to_next_node not in is_visited:
-                    heapq.heappush(edges, (cost, next_node, to_next_node))
+                    heapq.heappush(edges, (cost, next_vertex, to_next_node))
 
     return dict(min_span_tree)
