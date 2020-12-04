@@ -14,7 +14,6 @@ def prims(graph, root_vertex) -> dict:
     edges = []
     for next_vertex, cost in graph[root_vertex].items():
         edges.append((cost, root_vertex, next_vertex))
-
     # Put root edges into priority queue
     heapq.heapify(edges)
     while edges:
@@ -25,5 +24,4 @@ def prims(graph, root_vertex) -> dict:
             for to_next_node, cost, in graph[next_vertex].items():
                 if to_next_node not in is_visited:
                     heapq.heappush(edges, (cost, next_vertex, to_next_node))
-
     return dict(min_span_tree)
