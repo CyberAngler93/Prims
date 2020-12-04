@@ -6,6 +6,14 @@
 import prims
 
 
+def check_fib(example, root_vertex, result):
+    if prims.fib_heap_prims(example, root_vertex) != result:
+        print(f"Failed!")
+        print(f"Expected = {result}\nBut got:\nResult   = {prims.fib_heap_prims(example, root_vertex)}\n")
+    else:
+        print("OK!")
+
+
 def check(example, root_vertex, result):
     if prims.prims(example, root_vertex) != result:
         print(f"Failed!")
