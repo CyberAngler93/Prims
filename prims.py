@@ -19,9 +19,8 @@ def fib_heap_prims(graph, root_vertex) -> dict:
     fib_heap = fibheap.makefheap()
     for item in edges:
         fibheap.fheappush(fib_heap, item)
-
-    while edges:
-        cost, current_vertex, next_vertex = heapq.heappop(edges)
+    while fib_heap.num_nodes:
+        (cost, current_vertex, next_vertex) = fibheap.fheappop(fib_heap)
         if next_vertex not in is_visited:
             is_visited.add(next_vertex)
             min_span_tree[current_vertex].append(next_vertex)
