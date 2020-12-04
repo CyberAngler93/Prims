@@ -77,12 +77,7 @@ def test():
     check_fib(example_graph_medium, 'A', example_graph_medium_result_a)
     print('Testing Medium Starting at node B')
     check_fib(example_graph_medium, 'B', example_graph_medium_result_b)
-
     print('Tests Completed')
-
-
-
-
 
     print('Starting heapq tests')
     print('Starting Tiny Graph Test Suite')
@@ -100,7 +95,6 @@ def test():
     check(example_graph_medium, 'A', example_graph_medium_result_a)
     print('Testing Medium Starting at node B')
     check(example_graph_medium, 'B', example_graph_medium_result_b)
-
     print('Tests Completed')
 
 
