@@ -13,7 +13,10 @@
  
  ## Usage
  
- How to use this function is by including ``prims.py`` in your file and calling ``prims.prims(graph, root_vertex)`` 
+ How to use ``prims`` function is by including ``prims.py`` in your file and calling ``prims.prims(graph, root_vertex)`` 
+ 
+ How to use ``fib_heap_prims`` function is by including ``prims.py`` in your file and calling ``prims.fib_heap_prims(graph, root_vertex)`` 
+ 
  
  ### Type Requirements
  
@@ -23,13 +26,20 @@
  
  ## Test 
  
- This project contains a simple test suite written to confirm the functionality of the algorithm. These tests are included in the ``test.py``
+ This project contains a simple test suite written to confirm the functionality of the algorithm utilizing both the fibheap and heapq. These tests are included in the ``test.py``
  
  ## Things that can be improved
  
- The test suite does not utilize a frame work and would likely be a good place to improve on. 
+ The test suite does not utilize a testing framework and would likely be a good place to improve on. 
  
  
  ## Analysis 
  
- According to heapq documentation heapfy is a linear in place operation [source](https://docs.python.org/3/library/heapq.html#heapq.heapify)
+ According to heapq documentation heapfy is a linear in place operation [source](https://docs.python.org/3/library/heapq.html#heapq.heapify)  
+ heapq also is implemented using a basic binary heap, I wanted to know if a Fibonacci Heap would perform better on prims with python.
+ 
+ A Fibonacci Heap python [lib](https://pypi.org/project/fibheap/), a second iteration was prims was made utilizing a fibheap. 
+ 
+ ### Timing
+ 
+ Coming soon timing comparison between heapq and fibheap.
