@@ -4,10 +4,12 @@
 # For CS411 HW7
 # Prof. Hartman Fall 2020
 import prims
+import time
 
 
 def check_fib(example, root_vertex, result):
-    if prims.fib_heap_prims(example, root_vertex) != result:
+    res = prims.fib_heap_prims(example, root_vertex)
+    if res != result:
         print(f"Failed!")
         print(f"Expected = {result}\nBut got:\nResult   = {prims.fib_heap_prims(example, root_vertex)}\n")
     else:
@@ -15,7 +17,8 @@ def check_fib(example, root_vertex, result):
 
 
 def check(example, root_vertex, result):
-    if prims.prims(example, root_vertex) != result:
+    res = prims.prims(example, root_vertex)
+    if res != result:
         print(f"Failed!")
         print(f"Expected = {result}\nBut got:\nResult   = {prims.prims(example, root_vertex)}\n")
     else:
@@ -60,7 +63,6 @@ def test():
         'A': {'A': '1'},
     }
     example_only_root_result = {}
-
     print('Starting fibheap tests')
     print('Starting Tiny Graph Test Suite')
     print('Testing a Single Vertex')
