@@ -28,12 +28,11 @@ def gengraph():
     res = prims.prims(graph, vertex)
     heapqtime = time.time() - start
     print(res)
-    print(heapqtime)
+    print(f'heapq:{heapqtime}')
     start = time.time()
     res = prims.fib_heap_prims(graph, vertex)
     fibqtime = time.time() - start
-    print(res)
-    print(fibqtime)
+    print(f'fibq: {fibqtime}')
 
 
 if __name__ == "__main__":
