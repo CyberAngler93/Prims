@@ -49,20 +49,20 @@ The graph is then ran through prims on both the heapq and fibq methods utilizing
 
 The results of the timing experiments found that the heapq method ran faster than the fibq method. 
 
-Here are the results after 5 runs:
-heapq:0.001985788345336914
+Here are the results after 5 runs:  
+heapq:0.001985788345336914  
 fibq: 0.0689995288848877
 
-heapq:0.0010004043579101562
+heapq:0.0010004043579101562  
 fibq: 0.069000244140625
 
-heapq:0.0009999275207519531
+heapq:0.0009999275207519531  
 fibq: 0.08899807929992676
 
-heapq:0.001994609832763672
+heapq:0.001994609832763672  
 fibq: 0.07899713516235352
 
-heapq:0.0009925365447998047
+heapq:0.0009925365447998047  
 fibq: 0.0800015926361084
 
 ### Thoughts
