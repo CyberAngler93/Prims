@@ -1,10 +1,9 @@
 # Test suite for my implementation of Prims Minimum Spanning Tree
 # Created by Matt Perry on 12/02/20
-# Last Modified 12/11/20
+# Last Modified 12/12/20
 # For CS411 HW7
 # Prof. Hartman Fall 2020
 import prims
-import time
 
 
 def check_fib(example, root_vertex, result):

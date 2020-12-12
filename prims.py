@@ -1,6 +1,6 @@
 # Simple python prims algorithm
 # Created by Matt Perry on 12/02/202
-# Last Modified 12/11/20
+# Last Modified 12/12/20
 # For CS411 HW 7
 # Prof. Hartman Fall 2020
 import heapq
