@@ -1,7 +1,14 @@
+# timing suite for my implementation of Prims Minimum Spanning Tree
+# Created by Matt Perry on 12/12/20
+# Last Modified 12/12/20
+# For CS411 HW7
+# Prof. Hartman Fall 2020
 import prims
 import time
 import random
 
+
+# gengraph will build a random legal graph, it will then call the two versions of prims, fib and heapq and print results
 def gengraph():
     graph = {}
     letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
