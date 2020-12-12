@@ -41,5 +41,6 @@
  A Fibonacci Heap python [lib](https://pypi.org/project/fibheap/), a second iteration was prims was made utilizing a fibheap. 
  
  ### Timing
+ As of 12/12/20:  
  
- Coming soon timing comparison between heapq and fibheap.
+ On the graphs in the test.py section timing was unable to produce any difference. This could be the sample size is too small. Generating a larger graph maybe better for determining time. Another option would be to further investigate timing methods and try maybe timing 5, 10, 100 prims calls on graphs and calculating an average. 
